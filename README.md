@@ -1,6 +1,11 @@
 # task-mgmt-docker
 This is a simple task management app made with Node.js + Express + Vue.js. It can run locally or in a Docker container.
 
+### Pre-requisites:
+1) Latest version of Node.js installed locally: https://nodejs.org/
+2) Vue.js: `npm install --global vue-cli`
+3) Install Docker: https://docs.docker.com/engine/installation/
+
 ### How to Run:
 1) Clone the repository with `git clone https://github.com/p-cherukuri/task-mgmt-docker.git` or by downloading the ZIP file.
 2) `cd task-mgmt-docker/services/tasks` -
@@ -10,8 +15,10 @@ This is where the tasks app resides, with the Express server implementation bein
 or use `npm run build` to build the static production files to be served in Express when running on Docker.
 5) `cd ..` to go back to the root `tasks` directory. I created a custom NPM build script that is used by running `npm run build`.
 This builds a Docker image using the custom Dockerfile I wrote, and then immediately runs the Docker container on port `8000`.
-To run a local development version of Express,
-run `nodemon`.
+These commands are `docker build -t user/task-app`
+and `docker run -p 8000:8000 -d -t user/task-app` respectively.
+To run a local development version of the app, first run `npm install` to get all the dependencies locally,
+then run `nodemon`.
 6) After running the build script, the app should be up and running at `http://localhost:8000` - this is the Vue app hosted on Express running in the Docker container.
 7) The user interface lets you create a task with a description and due date, and then either mark it as complete or delete it. I implemented LocalStorage to allow the task list state to persist as long as the browser session data has not been cleared.
 
