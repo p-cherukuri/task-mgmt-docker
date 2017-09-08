@@ -3,7 +3,7 @@ FROM node:boron
 
 # Create app directory
 # Choose a directory for Docker image to go into here
-WORKDIR /interview/server/
+WORKDIR /interview/app
 
 # Install app dependencies
 COPY package.json .

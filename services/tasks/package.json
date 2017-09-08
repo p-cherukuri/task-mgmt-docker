@@ -1,19 +1,21 @@
 {
-    "name": "task_mgmt_docker",
-    "version": "1.0.0",
-    "description": "simple todo app using Docker",
-    "author": "Phanindra Cherukuri <phani.cheruk@gmail.com>",
-    "main": "server.js",
-    "scripts": {
-      "start": "nodemon --legacy-watch"
-    },
-    "dependencies": {
-      "express": "^4.15.4",
-      "axios": "*",
-      "body-parser": "*",
-      "mongodb": "*"
-    },
-    "devDependencies": {
-      "nodemon": "*"
-    }
+  "name": "task_mgmt_docker",
+  "version": "1.0.0",
+  "description": "simple todo app using Docker",
+  "author": "p-cherukuri <phani.cheruk@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --legacy-watch",
+    "build": "docker build -t user/task-app . && docker run -p 8000:8000 -d -t user/task-app"
+  },
+  "dependencies": {
+    "axios": "*",
+    "body-parser": "*",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "mongodb": "*"
+  },
+  "devDependencies": {
+    "nodemon": "*"
   }
+}

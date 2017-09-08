@@ -13,8 +13,11 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
+    "axios": "^0.16.2",
+    "moment": "^2.18.1",
     "sweetalert": "^2.0.3",
-    "vue": "^2.4.2"
+    "vue": "^2.4.2",
+    "vuejs-datepicker": "^0.9.11"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
