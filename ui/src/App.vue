@@ -1,17 +1,50 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello></hello>
+    <create-task v-on:create-task="createTask"></create-task>
+    <task-list v-bind:tasks="tasks"></task-list>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+import sweetalert from 'sweetalert';
+import TaskList from './components/TaskList/TaskList';
+import CreateTask from './components/CreateTask/CreateTask';
 
 export default {
   name: 'app',
   components: {
-    Hello,
+    // Reference to components
+    TaskList,
+    CreateTask,
+  },
+  // Function for providing data to display list of tasks
+  data() {
+    return {
+      tasks: [{
+        title: 'Task A',
+        desc: 'Description A',
+        completed: true,
+      }, {
+        title: 'Task B',
+        desc: 'Description B',
+        completed: false,
+      }, {
+        title: 'Task C',
+        desc: 'Description C',
+        completed: false,
+      }, {
+        title: 'Task D',
+        desc: 'Description D',
+        completed: false,
+      }],
+    };
+  },
+  methods: {
+    createTask(newTask) {
+      this.tasks.push(newTask);
+      sweetalert('Success!', 'Task created!', 'success');
+    },
   },
 };
 </script>
