@@ -1,0 +1,19 @@
+{
+    "name": "task_mgmt_docker",
+    "version": "1.0.0",
+    "description": "simple todo app using Docker",
+    "author": "Phanindra Cherukuri <phani.cheruk@gmail.com>",
+    "main": "server.js",
+    "scripts": {
+      "start": "nodemon --legacy-watch"
+    },
+    "dependencies": {
+      "express": "^4.15.4",
+      "axios": "*",
+      "body-parser": "*",
+      "mongodb": "*"
+    },
+    "devDependencies": {
+      "nodemon": "*"
+    }
+  }
