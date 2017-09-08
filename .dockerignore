@@ -1,5 +1,0 @@
-# Files to be ignored by Docker
-# Preventing local modules and debug logs from being copied onto Docker image
-
-node_modules
-npm-debug.log
